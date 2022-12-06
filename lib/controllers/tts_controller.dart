@@ -11,6 +11,9 @@ class TTSController extends GetxController {
     flutterTts.setVoice(ttsVoices[settingsController.voice.value +
         "-" +
         settingsController.selectedG.value]!);
+    print(ttsVoices[settingsController.voice.value +
+        "-" +
+        settingsController.selectedG.value]);
   }
 
   speak(text) {

@@ -16,7 +16,7 @@ List<Tile> tiles = [
   Tile(emoji: "🕰", title: "Recently Used", route: UserCreatedPage()),
   Tile(emoji: "✍", title: "User Created", route: UserCreatedPage()),
   Tile(
-      emoji: "1️⃣",
+      emoji: "\u{1F522}",
       title: "Numbers",
       route: UniversalTilePage(routename: "Numbers")),
   Tile(

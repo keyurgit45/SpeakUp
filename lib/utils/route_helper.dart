@@ -30,7 +30,7 @@ bool isAlphabetTile(String routeName) {
 }
 
 bool isExplanationTile(String routeName) {
-  if (routeName.startsWith("Unmute")) {
+  if (routeName.startsWith("SpeakUp")) {
     return true;
   } else {
     return false;

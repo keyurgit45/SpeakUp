@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:speakup/consts/app_colors.dart';
 import 'package:speakup/controllers/settings_controller.dart';
 import 'package:speakup/controllers/tts_controller.dart';
-import 'package:speakup/utils/supported_lang.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -18,9 +17,9 @@ class _SettingsPageState extends State<SettingsPage> {
   SettingsController settingsController = SettingsController();
 
   void previewVoice() {
-    ttscontroller.flutterTts.setVoice(ttsVoices[settingsController.voice.value +
-        "-" +
-        settingsController.selectedG.value]!);
+    // ttscontroller.flutterTts.setVoice(ttsVoices[settingsController.voice.value +
+    //     "-" +
+    //     settingsController.selectedG.value]!);
     ttscontroller.flutterTts.speak("This is an example voice.");
   }
 
@@ -161,12 +160,14 @@ class _SettingsPageState extends State<SettingsPage> {
         value: settingsController.voice.value,
         onChanged: (_value) {
           settingsController.voice.value = _value!;
+          ttscontroller.setmetadata();
         },
       );
 
   Widget genderButton(String gender, Color color) => GestureDetector(
         onTap: () {
           changeGender(gender);
+          ttscontroller.setmetadata();
         },
         child: Container(
           width: 90,
